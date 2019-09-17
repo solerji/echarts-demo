@@ -1,31 +1,29 @@
 <template>
-<div class="activeChart">
-  <div class="activeChart_main">
-    <div class="dragging_chart"></div>
-    <div class="click_add_chart"></div>
+  <div class="activeChart">
+    <div class="activeChart_main">
+      <div class="dragging_chart"></div>
+      <div class="click_add_chart"></div>
+    </div>
+    <div class="activeChart_button">
+      <button @click="getPie" class="button">返回饼图</button>
+      <button @click="getOther" class="button">去往其他图</button>
+    </div>
   </div>
-   <div class="activeChart_button">
-    <button class="button" @click="getMap">返回地图</button>
-    <button class="button" @click="getOther">去往其他图</button>
-  </div>
-</div>
 </template>
 
 <script>
 export default {
   name: 'index',
-  data () {
-    return {
-    }
+  data() {
+    return {}
   },
-  mounted () {
-  },
+  mounted() {},
   methods: {
-    getMap: function () {
+    getPie: function() {
       let vue = this
-      vue.$router.push('/MapChart')
+      vue.$router.push('/PieChart')
     },
-    getOther: function () {
+    getOther: function() {
       let vue = this
       vue.$router.push('/OtherChart')
     }
@@ -42,6 +40,6 @@ export default {
   grid-template-rows: repeat(auto-fill, auto-fill);
 }
 .button {
-  margin-left: 90%
+  margin-left: 90%;
 }
 </style>

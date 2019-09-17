@@ -1,15 +1,15 @@
 <template>
-<div class="pieChart">
-  <div class="pieChart_main">
-    <div class="customized_pie" id="Customized"></div>
-    <div class="pie_with_scrollable_chart" id="pie_with_scrollable"></div>
-    <div class="default_arrangement_chart" id="default_arrangement"></div>
+  <div class="pieChart">
+    <div class="pieChart_main">
+      <div class="customized_pie" id="Customized"></div>
+      <div class="pie_with_scrollable_chart" id="pie_with_scrollable"></div>
+      <div class="default_arrangement_chart" id="default_arrangement"></div>
+    </div>
+    <div class="pieChart_button">
+      <button @click="getBar" class="button">返回柱状图</button>
+      <button @click="getActive" class="button">去往动态图</button>
+    </div>
   </div>
-   <div class="pieChart_button">
-    <button class="button" @click="getBar">返回柱状图</button>
-    <button class="button" @click="getMapChart">去往地图</button>
-  </div>
-</div>
 </template>
 
 <script>
@@ -18,7 +18,7 @@ import { initpieWithScrollableChart } from '@/utils/pieChart/pieWithScrollablePi
 import { initdefaultArrangementChart } from '@/utils/pieChart/defaultArrangement.js'
 export default {
   name: 'index',
-  data () {
+  data() {
     return {
       nameData: {
         legendData: [
@@ -66,17 +66,17 @@ export default {
       }
     }
   },
-  mounted () {
+  mounted() {
     initCustomizedPieChart('Customized')
     initpieWithScrollableChart('pie_with_scrollable', this.nameData)
     initdefaultArrangementChart('default_arrangement')
   },
   methods: {
-    getMapChart: function () {
+    getActive: function() {
       let vue = this
-      vue.$router.push('/MapChart')
+      vue.$router.push('/ActiveChart')
     },
-    getBar: function () {
+    getBar: function() {
       let vue = this
       vue.$router.push('/BarChart')
     }
@@ -92,7 +92,8 @@ export default {
   grid-template-columns: repeat(3, 20rem);
   grid-template-rows: repeat(auto-fill, auto-fill);
 }
-.customized_pie, .pie_with_scrollable {
+.customized_pie,
+.pie_with_scrollable {
   height: 500px;
   width: 300px;
 }
@@ -101,6 +102,6 @@ export default {
   width: 300px;
 }
 .button {
-  margin-left: 90%
+  margin-left: 90%;
 }
 </style>
