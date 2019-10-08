@@ -1,4 +1,4 @@
-# echarts-demo
+# e - UI
 
 > A Vue.js project
 
@@ -29,7 +29,9 @@ npm test
 
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
 
-# 效果图(还有一个半页面未完成，完成后补图)
+# 项目简介
+使用vue.js封装了一些基本echarts图表，封装后的图表样例可在vue.js中较为方便的使用。
+# 效果图
 
 ![](/src/assets/3.png)
 
